@@ -76,7 +76,6 @@ if "chat_session" not in st.session_state:
     
     # Create a stateful chat session using the modern SDK
     st.session_state.chat_session = st.session_state.client.chats.create(
-    st.session_state.chat_session = client.chats.create(
         model="gemini-2.5-flash",
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_INSTRUCTION,
