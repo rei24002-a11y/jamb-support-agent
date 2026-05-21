@@ -71,9 +71,11 @@ if not api_key:
 
 # Initialize the Gemini Client and Chat Session in Streamlit state
 if "chat_session" not in st.session_state:
-    client = genai.Client(api_key=api_key)
+    # STORE THE CLIENT IN STATE SO IT DOES NOT CLOSE
+    st.session_state.client = genai.Client(api_key=api_key)
     
     # Create a stateful chat session using the modern SDK
+    st.session_state.chat_session = st.session_state.client.chats.create(
     st.session_state.chat_session = client.chats.create(
         model="gemini-2.5-flash",
         config=types.GenerateContentConfig(
