@@ -1,0 +1,6 @@
+[server]
+# Disables CORS (Cross-Origin Resource Sharing) to allow your website to iframe the app
+enableCORS = false
+
+# Disables XSRF (Cross-Site Request Forgery) protection for the iframe environment
+enableXsrfProtection = false
